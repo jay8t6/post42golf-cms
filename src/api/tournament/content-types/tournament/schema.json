@@ -64,8 +64,7 @@
     "status": {
       "type": "enumeration",
       "enum": ["upcoming", "registration_open", "registration_closed", "in_progress", "completed", "cancelled"],
-      "required": true,
-      "default": "upcoming"
+      "required": true
     }
   }
 }

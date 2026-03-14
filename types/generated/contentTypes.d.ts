@@ -563,8 +563,7 @@ export interface ApiTournamentTournament extends Struct.CollectionTypeSchema {
         'cancelled',
       ]
     > &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'upcoming'>;
+      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
