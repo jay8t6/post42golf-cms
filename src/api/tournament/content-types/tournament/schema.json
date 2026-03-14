@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tournaments",
+  "info": {
+    "singularName": "tournament",
+    "pluralName": "tournaments",
+    "displayName": "Tournament",
+    "description": "Golf tournaments at Post 42 Golf"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "format": {
+      "type": "enumeration",
+      "enum": ["scramble", "best_ball", "stroke_play", "match_play", "alternate_shot", "other"],
+      "required": true
+    },
+    "formatDescription": {
+      "type": "string"
+    },
+    "entryFee": {
+      "type": "decimal"
+    },
+    "prizes": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "registrationLink": {
+      "type": "string"
+    },
+    "maxTeams": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["upcoming", "registration_open", "registration_closed", "in_progress", "completed", "cancelled"],
+      "required": true,
+      "default": "upcoming"
+    }
+  }
+}

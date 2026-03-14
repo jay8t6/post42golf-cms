@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leagues",
+  "info": {
+    "singularName": "league",
+    "pluralName": "leagues",
+    "displayName": "League",
+    "description": "Golf leagues at Post 42 Golf"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "dayOfWeek": {
+      "type": "enumeration",
+      "enum": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "required": true
+    },
+    "startTime": {
+      "type": "time",
+      "required": true
+    },
+    "endTime": {
+      "type": "time"
+    },
+    "format": {
+      "type": "enumeration",
+      "enum": ["scramble", "best_ball", "stroke_play", "match_play", "coed", "other"],
+      "required": true
+    },
+    "formatDescription": {
+      "type": "string"
+    },
+    "pricePerPerson": {
+      "type": "decimal",
+      "required": true
+    },
+    "seasonFee": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "season": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "registrationLink": {
+      "type": "string"
+    },
+    "maxPlayers": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["active", "registration_open", "registration_closed", "completed", "upcoming"],
+      "required": true,
+      "default": "upcoming"
+    }
+  }
+}
