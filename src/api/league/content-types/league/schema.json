@@ -76,7 +76,7 @@
     "maxPlayers": {
       "type": "integer"
     },
-    "status": {
+    "leagueStatus": {
       "type": "enumeration",
       "enum": ["active", "registration_open", "registration_closed", "completed", "upcoming"],
       "required": true
